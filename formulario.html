@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-900 text-slate-100">
+<html lang="es" class="h-full text-slate-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #12344d;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
@@ -19,34 +20,34 @@
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: #0d263b;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #204c70;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+            background: #02b89d;
         }
     </style>
 </head>
-<body class="h-full flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-red-500 selection:text-white">
+<body class="h-full flex flex-col text-slate-100 antialiased selection:bg-[#02b89d] selection:text-white">
 
     <!-- TOP HEADER -->
-    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-30 shadow-lg">
+    <header class="bg-[#0f2b42] border-b border-[#204c70] sticky top-0 z-30 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <!-- Logo & Title -->
                 <div class="flex items-center space-x-3">
-                    <div class="bg-gradient-to-tr from-red-600 to-red-500 p-2.5 rounded-xl shadow-md shadow-red-900/30">
+                    <div class="bg-gradient-to-tr from-[#02b89d] to-[#019680] p-2.5 rounded-xl shadow-md shadow-[#02b89d]/20">
                         <i class="fa-solid fa-wrench text-white text-xl"></i>
                     </div>
                     <div>
                         <div class="flex items-center space-x-2">
                             <h1 class="text-lg font-bold tracking-tight text-white">BATEC MOBILITY</h1>
-                            <span class="bg-red-500/10 text-red-400 text-xs px-2 py-0.5 rounded border border-red-500/20 font-mono font-medium">SAT RV-022 v3.0</span>
+                            <span class="bg-[#02b89d]/20 text-[#02b89d] text-xs px-2 py-0.5 rounded border border-[#02b89d]/30 font-mono font-medium">SAT RV-022 v3.0</span>
                         </div>
-                        <p class="text-xs text-slate-400">Registro de Verificación Técnica de Handbikes</p>
+                        <p class="text-xs text-slate-300">Registro de Verificación Técnica de Handbikes</p>
                     </div>
                 </div>
 
@@ -54,26 +55,26 @@
                 <div class="flex items-center space-x-4 flex-grow max-w-md">
                     <div class="w-full">
                         <div class="flex justify-between items-center text-xs mb-1">
-                            <span class="text-slate-400 font-medium">Progreso Verificación:</span>
-                            <span id="progress-text" class="font-bold text-red-400">0% (0/0)</span>
+                            <span class="text-slate-300 font-medium">Progreso Verificación:</span>
+                            <span id="progress-text" class="font-bold text-[#02b89d]">0% (0/0)</span>
                         </div>
-                        <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden border border-slate-700/50">
-                            <div id="progress-bar" class="bg-gradient-to-r from-red-600 to-emerald-500 h-full w-0 transition-all duration-300"></div>
+                        <div class="w-full bg-[#0b2032] h-2.5 rounded-full overflow-hidden border border-[#204c70]">
+                            <div id="progress-bar" class="bg-gradient-to-r from-[#02b89d] to-emerald-400 h-full w-0 transition-all duration-300"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Global Quick Action Buttons -->
                 <div class="flex items-center space-x-2">
-                    <button onclick="markAllGlobal('OK')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition">
+                    <button onclick="markAllGlobal('OK')" class="px-3 py-1.5 bg-[#1b3e5a] hover:bg-[#204c70] text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition">
                         <i class="fa-solid fa-check-double"></i>
                         <span class="hidden sm:inline">Todo OK</span>
                     </button>
-                    <button onclick="resetAllChecklists()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-400 border border-slate-700 rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition">
+                    <button onclick="resetAllChecklists()" class="px-3 py-1.5 bg-[#1b3e5a] hover:bg-[#204c70] text-slate-300 border border-[#265073] rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition">
                         <i class="fa-solid fa-rotate-right"></i>
                         <span class="hidden sm:inline">Reiniciar</span>
                     </button>
-                    <button onclick="copyDirectToClipboard()" class="px-3.5 py-1.5 bg-red-600 hover:bg-red-500 text-white rounded-lg text-xs font-bold shadow-md shadow-red-600/30 flex items-center space-x-2 transition transform active:scale-95">
+                    <button onclick="copyDirectToClipboard()" class="px-3.5 py-1.5 bg-[#02b89d] hover:bg-[#019680] text-white rounded-lg text-xs font-bold shadow-md shadow-[#02b89d]/30 flex items-center space-x-2 transition transform active:scale-95">
                         <i class="fa-solid fa-copy"></i>
                         <span>Copiar p/ Freshdesk</span>
                     </button>
@@ -82,24 +83,28 @@
         </div>
 
         <!-- NAVIGATION TABS -->
-        <div class="bg-slate-900/80 border-t border-slate-800/80 backdrop-blur">
+        <div class="bg-[#0d263b]/90 border-t border-[#204c70] backdrop-blur">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <nav class="flex space-x-1 overflow-x-auto py-2 no-scrollbar" id="tab-nav">
-                    <button onclick="goToStep(0)" id="btn-step-0" class="tab-btn active px-4 py-2 text-xs font-semibold rounded-lg flex items-center space-x-2 whitespace-nowrap transition bg-red-600/20 text-red-400 border border-red-500/30">
+                    <button onclick="goToStep(0)" id="btn-step-0" class="tab-btn active px-4 py-2 text-xs font-semibold rounded-lg flex items-center space-x-2 whitespace-nowrap transition bg-[#02b89d]/20 text-[#02b89d] border border-[#02b89d]/40">
                         <i class="fa-solid fa-gears"></i>
                         <span>1. Chasis, Anclaje y Freno</span>
                     </button>
-                    <button onclick="goToStep(1)" id="btn-step-1" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
+                    <button onclick="goToStep(1)" id="btn-step-1" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-[#1b3e5a] rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
                         <i class="fa-solid fa-bolt"></i>
                         <span>2. Electrónica y Consola</span>
                     </button>
-                    <button onclick="goToStep(2)" id="btn-step-2" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
+                    <button onclick="goToStep(2)" id="btn-step-2" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-[#1b3e5a] rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
                         <i class="fa-solid fa-gauge-high"></i>
                         <span>3. Comprobación Dinámica y Híbridos</span>
                     </button>
-                    <button onclick="goToStep(3)" id="btn-step-3" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
+                    <button onclick="goToStep(3)" id="btn-step-3" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-[#1b3e5a] rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
+                        <i class="fa-solid fa-sparkles"></i>
+                        <span>4. Puesta a Punto</span>
+                    </button>
+                    <button onclick="goToStep(4)" id="btn-step-4" class="tab-btn px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white hover:bg-[#1b3e5a] rounded-lg flex items-center space-x-2 whitespace-nowrap transition border border-transparent">
                         <i class="fa-solid fa-route"></i>
-                        <span>4. Ruta Final y Validación</span>
+                        <span>5. Ruta Final y Validación</span>
                     </button>
                 </nav>
             </div>
@@ -111,58 +116,58 @@
 
         <!-- STEP 1: CHASIS, ANCLAJE Y FRENO -->
         <div id="step-0" class="step-content space-y-6">
-            <div class="flex justify-between items-center bg-slate-900 p-4 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center bg-[#1b3e5a] p-4 rounded-xl border border-[#265073]">
                 <div>
                     <h2 class="text-base font-bold text-white">1. Mecánica Básica y Dinamometría</h2>
-                    <p class="text-xs text-slate-400">Verificaciones de Pares de apriete, chasis, frenos y ruedas</p>
+                    <p class="text-xs text-slate-300">Verificaciones de Pares de apriete, chasis, frenos y ruedas</p>
                 </div>
-                <button onclick="markSectionOK('step-0')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
+                <button onclick="markSectionOK('step-0')" class="px-3 py-1.5 bg-[#0f2b42] hover:bg-[#12344d] text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
                     Marcar sección como OK
                 </button>
             </div>
 
             <div class="space-y-4">
-                <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                    <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-800">
-                        <span class="text-xs font-bold text-red-400 uppercase">A. CHASIS - PAR DE APRIETE (Llave Dinamométrica / Allen 4-8mm)</span>
-                        <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Herramienta: DIN LLAVE</span>
+                <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                    <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#265073]">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase">A. CHASIS - PAR DE APRIETE (Llave Dinamométrica / Allen 4-8mm)</span>
+                        <span class="text-[10px] bg-[#0f2b42] text-slate-300 px-2 py-0.5 rounded">Herramienta: DIN LLAVE</span>
                     </div>
                     <div class="space-y-3" id="group-A"></div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-800">
-                            <span class="text-xs font-bold text-red-400 uppercase">B. ANCLAJE</span>
-                            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Manual / Visual</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#265073]">
+                            <span class="text-xs font-bold text-[#02b89d] uppercase">B. ANCLAJE</span>
+                            <span class="text-[10px] bg-[#0f2b42] text-slate-300 px-2 py-0.5 rounded">Manual / Visual</span>
                         </div>
                         <div class="space-y-3" id="group-B"></div>
                     </div>
 
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-800">
-                            <span class="text-xs font-bold text-red-400 uppercase">C. FRENO</span>
-                            <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Manual / Visual / Auditivo</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#265073]">
+                            <span class="text-xs font-bold text-[#02b89d] uppercase">C. FRENO</span>
+                            <span class="text-[10px] bg-[#0f2b42] text-slate-300 px-2 py-0.5 rounded">Manual / Visual / Auditivo</span>
                         </div>
                         <div class="space-y-3" id="group-C"></div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">D. CABALLETE</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">D. CABALLETE</span>
                         <div class="space-y-3" id="group-D"></div>
                     </div>
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">E. NEUMÁTICO (Manómetro)</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">E. NEUMÁTICO (Manómetro)</span>
                         <div class="space-y-3" id="group-E"></div>
                     </div>
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">F. ACELERADOR</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">F. ACELERADOR</span>
                         <div class="space-y-3" id="group-F"></div>
                     </div>
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">G. BATERÍA (Ajuste mecánico)</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">G. BATERÍA (Ajuste mecánico)</span>
                         <div class="space-y-3" id="group-G"></div>
                     </div>
                 </div>
@@ -171,57 +176,57 @@
 
         <!-- STEP 2: ELECTRÓNICA Y CONSOLA -->
         <div id="step-1" class="step-content hidden space-y-6">
-            <div class="flex justify-between items-center bg-slate-900 p-4 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center bg-[#1b3e5a] p-4 rounded-xl border border-[#265073]">
                 <div>
                     <h2 class="text-base font-bold text-white">2. Sistemas Electrónicos y Parámetros</h2>
-                    <p class="text-xs text-slate-400">Verificación de luces, consola LCD, perímetros de rueda y cableado PCB</p>
+                    <p class="text-xs text-slate-300">Verificación de luces, consola LCD, perímetros de rueda y cableado PCB</p>
                 </div>
-                <button onclick="markSectionOK('step-1')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
+                <button onclick="markSectionOK('step-1')" class="px-3 py-1.5 bg-[#0f2b42] hover:bg-[#12344d] text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
                     Marcar sección como OK
                 </button>
             </div>
 
             <div class="space-y-4">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">H. BOCINA / LUZ</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">H. BOCINA / LUZ</span>
                         <div class="space-y-3" id="group-H"></div>
                     </div>
 
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">I. CONSOLA LCD & CONFIGURACIÓN</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">I. CONSOLA LCD & CONFIGURACIÓN</span>
                         <div class="space-y-3" id="group-I"></div>
 
-                        <div class="mt-4 p-3 bg-slate-950 rounded-lg border border-slate-800">
-                            <span class="text-xs font-bold text-slate-300 block mb-2">Selección Rápida de Perímetro de Rueda (I.4):</span>
+                        <div class="mt-4 p-3 bg-[#0f2b42] rounded-lg border border-[#265073]">
+                            <span class="text-xs font-bold text-slate-200 block mb-2">Selección Rápida de Perímetro de Rueda (I.4):</span>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs font-mono">
-                                <button onclick="selectWheelPerimeter('M1', 1288)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">M1:</span> 1288
+                                <button onclick="selectWheelPerimeter('M1', 1288)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">M1:</span> 1288
                                 </button>
-                                <button onclick="selectWheelPerimeter('M2', 0990)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">M2:</span> 0990
+                                <button onclick="selectWheelPerimeter('M2', 0990)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">M2:</span> 0990
                                 </button>
-                                <button onclick="selectWheelPerimeter('E1/R1/H1/H1T', 1570)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">STD:</span> 1570
+                                <button onclick="selectWheelPerimeter('E1/R1/H1/H1T', 1570)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">STD:</span> 1570
                                 </button>
-                                <button onclick="selectWheelPerimeter('E2/R2', 1445)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">E2/R2:</span> 1445
+                                <button onclick="selectWheelPerimeter('E2/R2', 1445)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">E2/R2:</span> 1445
                                 </button>
-                                <button onclick="selectWheelPerimeter('S2', 1621)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">S2:</span> 1621
+                                <button onclick="selectWheelPerimeter('S2', 1621)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">S2:</span> 1621
                                 </button>
-                                <button onclick="selectWheelPerimeter('H2/H2T', 1602)" class="perimeter-btn p-2 bg-slate-900 border border-slate-800 rounded hover:border-red-500 text-left">
-                                    <span class="font-bold text-red-400">H2/H2T:</span> 1602
+                                <button onclick="selectWheelPerimeter('H2/H2T', 1602)" class="perimeter-btn p-2 bg-[#1b3e5a] border border-[#265073] rounded hover:border-[#02b89d] text-left">
+                                    <span class="font-bold text-[#02b89d]">H2/H2T:</span> 1602
                                 </button>
                             </div>
                             <input type="hidden" id="selected_perimeter" value="No seleccionado">
-                            <div id="perimeter-display" class="mt-2 text-xs text-slate-400 italic">Perímetro seleccionado: <span class="text-emerald-400 font-bold">Ninguno</span></div>
+                            <div id="perimeter-display" class="mt-2 text-xs text-slate-300 italic">Perímetro seleccionado: <span class="text-emerald-400 font-bold">Ninguno</span></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                    <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">J. CABLEADO ELECTRÓNICO & CONTROLADOR</span>
+                <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                    <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">J. CABLEADO ELECTRÓNICO & CONTROLADOR</span>
                     <div class="space-y-3" id="group-J"></div>
                 </div>
             </div>
@@ -229,36 +234,36 @@
 
         <!-- STEP 3: COMPROBACIÓN DINÁMICA Y HÍBRIDOS -->
         <div id="step-2" class="step-content hidden space-y-6">
-            <div class="flex justify-between items-center bg-slate-900 p-4 rounded-xl border border-slate-800">
+            <div class="flex justify-between items-center bg-[#1b3e5a] p-4 rounded-xl border border-[#265073]">
                 <div>
                     <h2 class="text-base font-bold text-white">3. Comprobación Dinámica, Tolerancias y Modelos Híbridos</h2>
-                    <p class="text-xs text-slate-400">Pruebas en parado/banco, giros de manillar y pedalero asistido H2/H2T</p>
+                    <p class="text-xs text-slate-300">Pruebas en parado/banco, giros de manillar y pedalero asistido H2/H2T</p>
                 </div>
-                <button onclick="markSectionOK('step-2')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
+                <button onclick="markSectionOK('step-2')" class="px-3 py-1.5 bg-[#0f2b42] hover:bg-[#12344d] text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
                     Marcar sección como OK
                 </button>
             </div>
 
             <div class="space-y-4">
-                <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                    <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">K. ACLERACIÓN, FRENADO & GIROS DE DIRECCIÓN</span>
+                <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                    <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">K. ACLERACIÓN, FRENADO & GIROS DE DIRECCIÓN</span>
                     <div class="space-y-3" id="group-K"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">L. TOLERANCIA CABLEADO</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">L. TOLERANCIA CABLEADO</span>
                         <div class="space-y-3" id="group-L"></div>
                     </div>
 
-                    <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4">
-                        <span class="text-xs font-bold text-red-400 uppercase block mb-3 pb-2 border-b border-slate-800">M. DIRECCIÓN</span>
+                    <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                        <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">M. DIRECCIÓN</span>
                         <div class="space-y-3" id="group-M"></div>
                     </div>
                 </div>
 
-                <div class="checklist-card bg-slate-900 border border-slate-800 rounded-xl p-4 border-l-4 border-l-amber-500">
-                    <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-800">
+                <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4 border-l-4 border-l-amber-500">
+                    <div class="flex items-center justify-between mb-3 pb-2 border-b border-[#265073]">
                         <span class="text-xs font-bold text-amber-400 uppercase">N. ESPECÍFICO HÍBRIDOS (H2 / H2T)</span>
                         <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded">Solo si aplica</span>
                     </div>
@@ -267,50 +272,70 @@
             </div>
         </div>
 
-        <!-- STEP 4: RUTA DE VALIDACIÓN FINAL -->
+        <!-- STEP 4: PUESTA A PUNTO (OUT/200/DEMO) -->
         <div id="step-3" class="step-content hidden space-y-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-sm space-y-4">
-                <h2 class="text-sm font-bold text-red-400 uppercase tracking-wider flex items-center space-x-2 border-b border-slate-800 pb-3">
+            <div class="flex justify-between items-center bg-[#1b3e5a] p-4 rounded-xl border border-[#265073]">
+                <div>
+                    <h2 class="text-base font-bold text-white">4. Puesta a Punto (OUT/200/DEMO)</h2>
+                    <p class="text-xs text-slate-300">Estética, ruidos por vibración, mejoras electrónicas y firmware</p>
+                </div>
+                <button onclick="markSectionOK('step-3')" class="px-3 py-1.5 bg-[#0f2b42] hover:bg-[#12344d] text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-semibold">
+                    Marcar sección como OK
+                </button>
+            </div>
+
+            <div class="space-y-4">
+                <div class="checklist-card bg-[#1b3e5a] border border-[#265073] rounded-xl p-4">
+                    <span class="text-xs font-bold text-[#02b89d] uppercase block mb-3 pb-2 border-b border-[#265073]">O. VERIFICACIONES DE PUESTA A PUNTO</span>
+                    <div class="space-y-3" id="group-O"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 5: RUTA DE VALIDACIÓN FINAL -->
+        <div id="step-4" class="step-content hidden space-y-6">
+            <div class="bg-[#1b3e5a] border border-[#265073] rounded-xl p-5 shadow-sm space-y-4">
+                <h2 class="text-sm font-bold text-[#02b89d] uppercase tracking-wider flex items-center space-x-2 border-b border-[#265073] pb-3">
                     <i class="fa-solid fa-road"></i>
-                    <span>4. Prueba en Ruta de Validación Final (>= 4 km / 2.25 Millas)</span>
+                    <span>5. Prueba en Ruta de Validación Final (>= 4 km / 2.25 Millas)</span>
                 </h2>
-                <div class="p-4 bg-slate-950 rounded-xl border border-slate-800 space-y-3">
-                    <p class="text-xs text-slate-300">
+                <div class="p-4 bg-[#0f2b42] rounded-xl border border-[#265073] space-y-3">
+                    <p class="text-xs text-slate-200">
                         Conecte el software <strong class="text-white">'Batec Settings'</strong> y conduzca durante al menos 4 km / 2.25 millas. Verifique continuamente los siguientes parámetros dinámicos:
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                        <label class="flex items-center space-x-2 bg-slate-900 p-2.5 rounded border border-slate-800 cursor-pointer">
+                        <label class="flex items-center space-x-2 bg-[#1b3e5a] p-2.5 rounded border border-[#265073] cursor-pointer">
                             <input type="checkbox" id="val_amperaje" class="rounded border-slate-700 text-emerald-500">
-                            <span class="text-xs text-slate-300">Consumo de Amperaje OK</span>
+                            <span class="text-xs text-slate-200">Consumo de Amperaje OK</span>
                         </label>
-                        <label class="flex items-center space-x-2 bg-slate-900 p-2.5 rounded border border-slate-800 cursor-pointer">
+                        <label class="flex items-center space-x-2 bg-[#1b3e5a] p-2.5 rounded border border-[#265073] cursor-pointer">
                             <input type="checkbox" id="val_gas" class="rounded border-slate-700 text-emerald-500">
-                            <span class="text-xs text-slate-300">Respuesta Acelerador (GAS)</span>
+                            <span class="text-xs text-slate-200">Respuesta Acelerador (GAS)</span>
                         </label>
-                        <label class="flex items-center space-x-2 bg-slate-900 p-2.5 rounded border border-slate-800 cursor-pointer">
+                        <label class="flex items-center space-x-2 bg-[#1b3e5a] p-2.5 rounded border border-[#265073] cursor-pointer">
                             <input type="checkbox" id="val_subidas" class="rounded border-slate-700 text-emerald-500">
-                            <span class="text-xs text-slate-300">Potencia en Subidas</span>
+                            <span class="text-xs text-slate-200">Potencia en Subidas</span>
                         </label>
-                        <label class="flex items-center space-x-2 bg-slate-900 p-2.5 rounded border border-slate-800 cursor-pointer">
+                        <label class="flex items-center space-x-2 bg-[#1b3e5a] p-2.5 rounded border border-[#265073] cursor-pointer">
                             <input type="checkbox" id="val_cambio" class="rounded border-slate-700 text-emerald-500">
-                            <span class="text-xs text-slate-300">Sistema Cambio de Marchas</span>
+                            <span class="text-xs text-slate-200">Sistema Cambio de Marchas</span>
                         </label>
-                        <label class="flex items-center space-x-2 bg-slate-900 p-2.5 rounded border border-slate-800 cursor-pointer">
+                        <label class="flex items-center space-x-2 bg-[#1b3e5a] p-2.5 rounded border border-[#265073] cursor-pointer">
                             <input type="checkbox" id="val_asistencia" class="rounded border-slate-700 text-emerald-500">
-                            <span class="text-xs text-slate-300">Asistencia de Pedaleo</span>
+                            <span class="text-xs text-slate-200">Asistencia de Pedaleo</span>
                         </label>
                     </div>
                 </div>
 
                 <!-- Datos del Técnico & Cierre -->
-                <div class="pt-4 border-t border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="pt-4 border-t border-[#265073] grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Nombre / Número del Técnico SAT</label>
-                        <input type="text" id="tecnico_nombre" placeholder="Ej: Juan Pérez (#T104)" class="w-full bg-slate-950 border border-slate-700 rounded px-3 py-2 text-xs text-white">
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Nombre / Número del Técnico SAT</label>
+                        <input type="text" id="tecnico_nombre" placeholder="Ej: Juan Pérez (#T104)" class="w-full bg-[#0f2b42] border border-[#265073] rounded px-3 py-2 text-xs text-white">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Estado de Validación Final</label>
-                        <select id="estado_final" class="w-full bg-slate-950 border border-slate-700 rounded px-3 py-2 text-xs font-bold text-emerald-400">
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Estado de Validación Final</label>
+                        <select id="estado_final" class="w-full bg-[#0f2b42] border border-[#265073] rounded px-3 py-2 text-xs font-bold text-emerald-400">
                             <option value="APTO">✅ VERIFICADO Y APTO PARA ENTREGA</option>
                             <option value="NO APTO">❌ NO APTO / REQUIERE ACCIÓN ADICIONAL</option>
                         </select>
@@ -320,15 +345,15 @@
         </div>
 
         <!-- FOOTER WIZARD CONTROLS -->
-        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex justify-between items-center shadow-lg">
-            <button id="btn-prev" onclick="changeStep(-1)" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs rounded-lg transition border border-slate-700 disabled:opacity-30 disabled:cursor-not-allowed flex items-center space-x-2">
+        <div class="bg-[#0f2b42] border border-[#204c70] rounded-xl p-4 flex justify-between items-center shadow-lg">
+            <button id="btn-prev" onclick="changeStep(-1)" class="px-5 py-2.5 bg-[#1b3e5a] hover:bg-[#204c70] text-slate-200 font-bold text-xs rounded-lg transition border border-[#265073] disabled:opacity-30 disabled:cursor-not-allowed flex items-center space-x-2">
                 <i class="fa-solid fa-arrow-left"></i>
                 <span>Anterior</span>
             </button>
 
-            <span id="step-indicator" class="text-xs font-semibold text-slate-400 font-mono">Paso 1 de 4</span>
+            <span id="step-indicator" class="text-xs font-semibold text-slate-300 font-mono">Paso 1 de 5</span>
 
-            <button id="btn-next" onclick="handleNextStep()" class="px-6 py-2.5 bg-red-600 hover:bg-red-500 text-white font-bold text-xs rounded-lg shadow-md shadow-red-600/30 transition flex items-center space-x-2">
+            <button id="btn-next" onclick="handleNextStep()" class="px-6 py-2.5 bg-[#02b89d] hover:bg-[#019680] text-white font-bold text-xs rounded-lg shadow-md shadow-[#02b89d]/20 transition flex items-center space-x-2">
                 <span id="btn-next-text">Siguiente</span>
                 <i id="btn-next-icon" class="fa-solid fa-arrow-right"></i>
             </button>
@@ -419,11 +444,18 @@
                 { id: 'N3', text: '3. Frenado completo antes de 1/16 vuelta atrás (H2T)', type: 'MANUAL' },
                 { id: 'N4', text: '4. Funcionamiento del Magic Lever (H2T)', type: 'MANUAL' },
                 { id: 'N5', text: '5. Tensiones de cableado ajustadas', type: 'MANUAL' }
+            ],
+            'group-O': [
+                { id: 'O1', text: '1. Comprobar el estado de la fijación (pulir)', type: 'MANUAL/VISUAL' },
+                { id: 'O2', text: '2. Comprobar el estado de limpieza general (disimular arañazos)', type: 'MANUAL/VISUAL' },
+                { id: 'O3', text: '3. Comprobar ruidos por vibración en ruta (ruedines/pletina sujeción controlador)', type: 'AUDITORY/RUTA' },
+                { id: 'O4', text: '4. Comprobar incorporación de mejoras electrónicas (conectores/ferrita en M2)', type: 'MANUAL/VISUAL' },
+                { id: 'O5', text: '5. Comprobar versión de firmware', type: 'SOFTWARE' }
             ]
         };
 
         let currentStep = 0;
-        const totalSteps = 4;
+        const totalSteps = 5;
 
         document.addEventListener('DOMContentLoaded', () => {
             buildChecklists();
@@ -437,21 +469,21 @@
                 if (!container) continue;
 
                 container.innerHTML = items.map(item => `
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 bg-slate-950/60 rounded-lg border border-slate-800/80 gap-2 hover:border-slate-700 transition">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 bg-[#0f2b42]/70 rounded-lg border border-[#265073] gap-2 hover:border-[#02b89d]/50 transition">
                         <div class="flex items-start space-x-2.5">
-                            <span class="text-xs font-mono font-bold text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20">${item.id}</span>
-                            <span class="text-xs text-slate-200 leading-snug">${item.text}</span>
+                            <span class="text-xs font-mono font-bold text-[#02b89d] bg-[#02b89d]/10 px-1.5 py-0.5 rounded border border-[#02b89d]/20">${item.id}</span>
+                            <span class="text-xs text-slate-100 leading-snug">${item.text}</span>
                         </div>
                         <div class="flex items-center space-x-1.5 self-end sm:self-auto">
-                            <label class="px-2 py-1 bg-slate-900 border border-slate-800 rounded cursor-pointer hover:border-emerald-500/50 has-[:checked]:bg-emerald-500/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-400 text-[11px] font-bold text-slate-400 transition">
+                            <label class="px-2 py-1 bg-[#1b3e5a] border border-[#265073] rounded cursor-pointer hover:border-emerald-500/50 has-[:checked]:bg-emerald-500/20 has-[:checked]:border-emerald-500 has-[:checked]:text-emerald-400 text-[11px] font-bold text-slate-300 transition">
                                 <input type="radio" name="chk_${item.id}" value="OK" onchange="updateProgress()" class="hidden">
                                 <span>OK</span>
                             </label>
-                            <label class="px-2 py-1 bg-slate-900 border border-slate-800 rounded cursor-pointer hover:border-red-500/50 has-[:checked]:bg-red-500/20 has-[:checked]:border-red-500 has-[:checked]:text-red-400 text-[11px] font-bold text-slate-400 transition">
+                            <label class="px-2 py-1 bg-[#1b3e5a] border border-[#265073] rounded cursor-pointer hover:border-red-500/50 has-[:checked]:bg-red-500/20 has-[:checked]:border-red-500 has-[:checked]:text-red-400 text-[11px] font-bold text-slate-300 transition">
                                 <input type="radio" name="chk_${item.id}" value="NO" onchange="updateProgress()" class="hidden">
                                 <span>NO</span>
                             </label>
-                            <label class="px-2 py-1 bg-slate-900 border border-slate-800 rounded cursor-pointer hover:border-slate-600 has-[:checked]:bg-slate-800 has-[:checked]:border-slate-600 has-[:checked]:text-slate-200 text-[11px] font-bold text-slate-500 transition">
+                            <label class="px-2 py-1 bg-[#1b3e5a] border border-[#265073] rounded cursor-pointer hover:border-slate-500 has-[:checked]:bg-[#204c70] has-[:checked]:border-slate-400 has-[:checked]:text-slate-100 text-[11px] font-bold text-slate-400 transition">
                                 <input type="radio" name="chk_${item.id}" value="NA" onchange="updateProgress()" class="hidden">
                                 <span>N/A</span>
                             </label>
@@ -492,11 +524,11 @@
 
             document.querySelectorAll('.tab-btn').forEach((btn, index) => {
                 if (index === currentStep) {
-                    btn.classList.add('active', 'bg-red-600/20', 'text-red-400', 'border-red-500/30');
-                    btn.classList.remove('text-slate-400', 'border-transparent');
+                    btn.classList.add('active', 'bg-[#02b89d]/20', 'text-[#02b89d]', 'border-[#02b89d]/40');
+                    btn.classList.remove('text-slate-300', 'border-transparent');
                 } else {
-                    btn.classList.remove('active', 'bg-red-600/20', 'text-red-400', 'border-red-500/30');
-                    btn.classList.add('text-slate-400', 'border-transparent');
+                    btn.classList.remove('active', 'bg-[#02b89d]/20', 'text-[#02b89d]', 'border-[#02b89d]/40');
+                    btn.classList.add('text-slate-300', 'border-transparent');
                 }
             });
 
@@ -514,7 +546,7 @@
             } else {
                 nextText.innerText = "Siguiente";
                 nextIcon.className = "fa-solid fa-arrow-right";
-                nextBtn.className = "px-6 py-2.5 bg-red-600 hover:bg-red-500 text-white font-bold text-xs rounded-lg shadow-md shadow-red-600/30 transition flex items-center space-x-2";
+                nextBtn.className = "px-6 py-2.5 bg-[#02b89d] hover:bg-[#019680] text-white font-bold text-xs rounded-lg shadow-md shadow-[#02b89d]/20 transition flex items-center space-x-2";
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -655,6 +687,13 @@ L. TOLERANCIA, M. DIRECCIÓN & N. HÍBRIDOS:
   [${getStatus('N3')}] N.3 Frenado a 1/16 vuelta atrás (H2T)
   [${getStatus('N4')}] N.4 Magic Lever (H2T)
   [${getStatus('N5')}] N.5 Tensiones de cableado ajustadas
+
+O. PUESTA A PUNTO (OUT/200/DEMO):
+  [${getStatus('O1')}] O.1 Estado de la fijación (pulir)
+  [${getStatus('O2')}] O.2 Estado de limpieza general (disimular arañazos)
+  [${getStatus('O3')}] O.3 Ruidos por vibración en ruta (ruedines/pletina sujeción controlador)
+  [${getStatus('O4')}] O.4 Incorporación de mejoras electrónicas (conectores/ferrita en M2)
+  [${getStatus('O5')}] O.5 Versión de firmware verificada
 
 ================================================================================
 RUTA DE VALIDACIÓN Y FIRMA (>= 4 km / 2.25 mi)
