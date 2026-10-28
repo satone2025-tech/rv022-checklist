@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Verificación RV-022 v3.0</title>
+    <title>Batec Mobility - Registro de Verificación RV-022 v3.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -47,7 +47,7 @@
                     </div>
                     <div>
                         <div class="flex items-center space-x-2">
-                            <h1 class="text-lg font-bold tracking-tight text-[#12344d]">RV-022</h1>
+                            <h1 class="text-lg font-bold tracking-tight text-[#12344d]">BATEC MOBILITY</h1>
                             <span class="bg-red-50 text-red-600 text-xs px-2 py-0.5 rounded border border-red-200 font-mono font-bold">SAT RV-022 v3.0</span>
                         </div>
                         <p class="text-xs text-slate-500">Registro de Verificación Técnica de Handbikes</p>
@@ -383,7 +383,7 @@
                 { id: 'A7', text: '7. Comprobar 2 tornillos de ajuste de dirección (6 Nm)', type: 'DIN LLAVE' }
             ],
             'group-B': [
-                { id: 'B1', text: '1. Comprobar palanca de liberación libre sin atascos (REPITA 3 VECES)', type: 'MANUAL/VISUAL' },
+                { id: 'B1', text: '1. Comprobar palanca de liberación libre sin atascos (REPITA 10 VECES)', type: 'MANUAL/VISUAL' },
                 { id: 'B2', text: '2. Comprobar ajuste entre BARRA DE ANCLAJE y fijación', type: 'MANUAL/VISUAL' }
             ],
             'group-C': [
@@ -404,7 +404,7 @@
             ],
             'group-G': [
                 { id: 'G1', text: '1. Inserción/Extracción y Conexión/Desconexión de batería', type: 'MANUAL' },
-                { id: 'G2', text: '2. Pines conector Anderson en posición/estado correctos (Batería/Batec)', type: 'MANUAL/VISUAL' }
+                { id: 'G2', text: '2. Pines conector Anderson en posición correcta (Batería/Batec)', type: 'MANUAL/VISUAL' }
             ],
             'group-H': [
                 { id: 'H1', text: '1. Luces del./tras. (posición corta/larga) x4', type: 'MANUAL/VISUAL' },
@@ -423,14 +423,13 @@
                 { id: 'J2', text: '2. Conectores datos Driver PCB - Control PCB bien encajados', type: 'MANUAL/VISUAL' },
                 { id: 'J3', text: '3. Condensadores en Driver PCB bien soldados y sin juego', type: 'MANUAL/VISUAL' },
                 { id: 'J4', text: '4. Conectores potencia/tensión sin daños térmicos', type: 'MANUAL/VISUAL' },
-                { id: 'J5', text: '5. Cables bien distribuidos para holgura de cable de torsión', type: 'MANUAL/VISUAL' }
-                { id: 'J6', text: '5. Estado y funcionamiento de los sensores de freno electrónico', type: 'MANUAL/VISUAL' }
+                { id: 'J5', text: '5. Cables bien recogidos para holgura de cable de torsión', type: 'MANUAL/VISUAL' }
             ],
             'group-K': [
                 { id: 'K1', text: '1. Acelerar avance/retroceso y niveles en LCD / Velocímetro / Ruidos motor', type: 'MANUAL/VISUAL' },
                 { id: 'K2', text: '2. Frenado máx. velocidad / Sensor de corte LED / Mover cable', type: 'MANUAL/VISUAL' },
                 { id: 'K3', text: '3. Rodadura en línea recta sin bloqueos', type: 'MANUAL/VISUAL' },
-                { id: 'K4', text: '4. Giro manillar 90º acelerando (4 por lado)', type: 'MANUAL/VISUAL' },
+                { id: 'K4', text: '4. Giro manillar 90º acelerando (10 VECES por lado)', type: 'MANUAL/VISUAL' },
                 { id: 'K5', text: '5. Comprobar ausencia de bloqueo tras giros', type: 'MANUAL/VISUAL' },
                 { id: 'K6', text: '6. Simetría de manetas de freno sin tocar puños', type: 'MANUAL/VISUAL' },
                 { id: 'K7', text: '7. Frenado total antes de tope mecánico (SOLO TETRA)', type: 'MANUAL/VISUAL' }
@@ -672,7 +671,6 @@ J. CABLEADO ELECTRÓNICO & CONTROLADOR:
   [${getStatus('J3')}] J.3 Condensadores en Driver PCB firmes
   [${getStatus('J4')}] J.4 Conectores potencia sin fallo térmico
   [${getStatus('J5')}] J.5 Cableado recogido con holgura
-  [${getStatus('J6')}] J.6 Sensores de freno electrónico
 
 K. COMPROBACIÓN DINÁMICA & GIROS:
   [${getStatus('K1')}] K.1 Aceleración/Velocímetro/Ruido motor
