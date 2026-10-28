@@ -453,7 +453,8 @@
                 { id: 'O2', text: '2. Comprobar el estado de limpieza general (disimular arañazos)', type: 'MANUAL/VISUAL' },
                 { id: 'O3', text: '3. Comprobar ruidos por vibración en ruta (ruedines/pletina sujeción controlador)', type: 'AUDITORY/RUTA' },
                 { id: 'O4', text: '4. Comprobar incorporación de mejoras electrónicas (conectores/ferrita en M2)', type: 'MANUAL/VISUAL' },
-                { id: 'O5', text: '5. Comprobar versión de firmware', type: 'SOFTWARE' }
+                { id: 'O5', text: '5. Comprobar versión de firmware', type: 'SOFTWARE' },
+                { id: 'O6', text: '6. Comprobar tipo de sensores de freno', type: 'MANUAL/VISUAL' }
             ]
         };
 
@@ -697,6 +698,7 @@ O. PUESTA A PUNTO (OUT/200/DEMO):
   [${getStatus('O3')}] O.3 Ruidos por vibración en ruta (ruedines/pletina sujeción controlador)
   [${getStatus('O4')}] O.4 Incorporación de mejoras electrónicas (conectores/ferrita en M2)
   [${getStatus('O5')}] O.5 Versión de firmware verificada
+  [${getStatus('O6')}] O.6 Tipo de sensores de freno comprobado
 
 ================================================================================
 RUTA DE VALIDACIÓN Y FIRMA (>= 4 km / 2.25 mi)
